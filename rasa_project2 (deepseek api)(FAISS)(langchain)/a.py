@@ -1,6 +1,6 @@
 import requests
 
-deepseek_api_key = "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"
+deepseek_api_key = <DEEPSEEK_API_KEY>
 url = "https://openrouter.ai/api/v1/chat/completions"
 
 headers = {
