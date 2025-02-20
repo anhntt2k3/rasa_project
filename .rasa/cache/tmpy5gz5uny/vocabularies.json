@@ -1,0 +1,52 @@
+{
+  "text": {
+    "hey": 8,
+    "hello": 7,
+    "hi": 9,
+    "bye": 2,
+    "goodbye": 6,
+    "what": 22,
+    "services": 18,
+    "does": 5,
+    "mor": 13,
+    "software": 19,
+    "provide": 17,
+    "is": 12,
+    "the": 21,
+    "price": 16,
+    "of": 14,
+    "industries": 11,
+    "specialize": 20,
+    "in": 10,
+    "difference": 4,
+    "between": 1,
+    "and": 0,
+    "other": 15,
+    "companies": 3
+  },
+  "intent": {
+    "greet": 2,
+    "goodbye": 1,
+    "ask_question": 0
+  },
+  "response": null,
+  "action_name": {
+    "action_listen": 7,
+    "action_restart": 8,
+    "action_session_start": 10,
+    "action_default_fallback": 5,
+    "action_deactivate_loop": 2,
+    "action_revert_fallback_events": 9,
+    "action_default_ask_affirmation": 3,
+    "action_default_ask_rephrase": 4,
+    "action_two_stage_fallback": 11,
+    "action_unlikely_intent": 12,
+    "action_back": 1,
+    "action_extract_slots": 6,
+    "action_ask_deepseek": 0,
+    "utter_goodbye": 13,
+    "utter_greet": 14
+  },
+  "action_text": null,
+  "intent_response_key": null
+}
