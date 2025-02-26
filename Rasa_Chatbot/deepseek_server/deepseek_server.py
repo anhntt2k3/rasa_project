@@ -13,9 +13,11 @@ from search_utils import search_faiss, search_bm25_answer, search_bm25_question,
 from langchain.prompts import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langdetect import detect
-from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory, ConversationBufferWindowMemory
 from langchain.schema.runnable import RunnableLambda
 from langchain.schema.output_parser import StrOutputParser
+from langchain.llms import HuggingFacePipeline
+from transformers import pipeline
 
 app = FastAPI()
 
@@ -31,18 +33,26 @@ csv_path = "../database/database.csv"
 df = pd.read_csv(csv_path, encoding="utf-8")[['Question', 'Answer']]
 df = df.apply(lambda x: x.str.lower().str.strip())
 
+
 #Conversation buffer memory
-memory = ConversationBufferMemory(
+memory = ConversationBufferWindowMemory(
+    k=5,  # Chỉ lưu 5 tin nhắn gần nhất
     memory_key="history",
-    return_messages=True,
-    max_len=5
+    return_messages=True
 )
 
 #Extract keywords
-def extract_keywords(user_question):
+def extract_keywords(user_question, num_keywords=3):
     doc = nlp_en(user_question)
-    keywords = [chunk.text for chunk in doc.noun_chunks][:3]
-    return keywords
+
+    # Chỉ chọn danh từ, động từ, tính từ quan trọng
+    keywords = [
+        token.text for token in doc 
+        if token.pos_ in ["NOUN", "VERB", "ADJ"] and not token.is_stop
+    ]
+    
+    return keywords[:num_keywords]  # Lấy tối đa num_keywords
+
 
 class QuestionRequest(BaseModel):
     question: str
@@ -87,15 +97,21 @@ def query_deepseek(request: QuestionRequest):
         Relevant Data:
         {context}
 
-        You are a customer support assistant for MOR Software.
-        - If information is insufficient, ask for more details.
-        - Maintain conversation context.
-        - Answer only within the MOR Software database.
-        - Always respond in the language of the question.
-        - Provide clear and concise responses.
-        - **Do NOT** include "Think" or "Reasoning" sections.
-        - If the question is **irrelevant** (e.g., personal topics like food, weather, or unrelated subjects), **do not answer**. Instead, respond with:  "I can only assist with questions related to MOR Software. Please ask a relevant question."
-        - If the question is **related to MOR Software** but **not found in the database**, suggest contacting MOR Software directly: "This information is not available in our system. Please contact MOR Software directly for further details."
+        You are a customer support assistant for MOR Software.  
+        - If the question **lacks details**, ask follow-up questions to clarify.  
+        - If the question is **clear** but not in the database, do **not generate answers**. Instead, reply:  
+        "This information is not available in our system. Please contact MOR Software directly for further details."  
+        - Maintain conversation context and keep track of previous interactions.  
+        - If the conversation shifts to an unrelated topic, gently guide the user back to MOR Software-related topics.  
+        - Answer **only within the MOR Software database**.  
+        - Always respond in the **same language as the question**.  
+        - Provide **clear and concise** responses.  
+        - **Do NOT** include "Think" or "Reasoning" sections.  
+        - Format responses in a structured way (e.g., bullet points, short paragraphs).  
+        - Summarize long responses while keeping key details intact.  
+        - Maintain a **professional yet friendly tone**.  
+        - **If the question is irrelevant** (e.g., personal topics like food, weather, or unrelated subjects), **do not answer**. Instead, respond with:  
+        "I can only assist with questions related to MOR Software. Please ask a relevant question."          
         
         Conversation History:
         {history}
@@ -115,6 +131,9 @@ def query_deepseek(request: QuestionRequest):
         model="deepseek/deepseek-r1-distill-llama-70b:free",
         temperature=0.5,
         max_tokens=1024,
+        extra_body={
+            "think": False  # OpenRouter có hỗ trợ param này không? Nếu không, hãy bỏ nó đi.
+        }
     )
 
     #LangChain pipeline
@@ -142,7 +161,28 @@ def query_deepseek(request: QuestionRequest):
             response = GoogleTranslator(source='en', target='vi').translate(response)
 
         print("Conversation history:", memory.chat_memory.messages) #Debug
-        return {"answer": response}
+
+        # 🛠 GỌI API ĐÁNH GIÁ TỪ `evaluate_chatbot_ragas.py`
+        eval_payload = {
+            "question": user_question,
+            "contexts": [context],  # Truyền ngữ cảnh tìm thấy từ FAISS/BM25
+            "answer": response
+        }
+
+        eval_url = "http://localhost:8001/evaluate"  # API đánh giá chạy trên cổng 8001
+        try:
+            eval_result = requests.post(eval_url, json=eval_payload).json()
+            print("Evaluation Result:", eval_result)  # Debug kết quả đánh giá
+        except Exception as e:
+            eval_result = {"error": str(e)}
+            print("Evaluation Error:", e)
+
+        # 📌 Trả về câu trả lời cùng điểm đánh giá
+        return {
+            "answer": response,
+            "evaluation": eval_result  # Thêm kết quả đánh giá vào phản hồi
+        }
+
     
     except Exception as e:
         return {"answer": f"Error in LangChain call: {str(e)}"}

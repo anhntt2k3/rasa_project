@@ -1,0 +1,5 @@
+1. uvicorn deepseek_server:app --host 0.0.0.0 --port 8000 --reload
+2. rasa run actions
+3. rasa shell
+4. uvicorn evaluate_chatbot_ragas:app --host 0.0.0.0 --port 8001 --reload
+5. rasa run -m models --enable-api --cors "*" --debug
