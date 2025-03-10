@@ -1,0 +1,404 @@
+Mr
+mr
+Ms
+ms
+ms.
+Ms.
+offshore
+Offshore
+AI
+Ai
+ai
+web
+Web
+App
+mor software
+Mor software
+MOR software
+Software
+Hardware
+Backend
+Frontend
+Fullstack
+DevOps
+Cloud
+Cloud Computing
+Server
+Database
+SQL
+NoSQL
+Python
+Java
+JavaScript
+TypeScript
+React
+Angular
+Vue
+Node.js
+Django
+Flask
+Spring Boot
+API
+REST API
+GraphQL
+Microservices
+Docker
+Kubernetes
+CI/CD
+Pipeline
+Git
+GitHub
+GitLab
+Bitbucket
+AWS
+Azure
+Google Cloud
+VM
+Virtual Machine
+VPN
+Proxy
+Firewall
+Endpoint
+Cybersecurity
+Penetration Testing
+Pentest
+Bug Bounty
+Blockchain
+Smart Contract
+Ethereum
+Bitcoin
+Solidity
+Machine Learning
+Deep Learning
+Neural Network
+NLP
+Computer Vision
+Big Data
+Data Science
+TensorFlow
+PyTorch
+LLM
+Chatbot
+Rasa
+LangChain
+OpenAI
+DeepSeek
+Transformer
+BERT
+GPT
+LLAMA
+MOR
+ERP
+CRM
+HRM
+SaaS
+PaaS
+IaaS
+Tech Lead
+CTO
+CEO
+CFO
+COO
+HR
+QA
+QC
+Product Owner
+Scrum Master
+Agile
+Kanban
+Sprint
+Jira
+Trello
+Notion
+Slack
+Zoom
+Google Meet
+Teams
+Outlook
+Excel
+Word
+PowerPoint
+SharePoint
+OneDrive
+AWS Lambda
+EC2
+S3
+CloudFront
+Route 53
+IAM
+Terraform
+Ansible
+Jenkins
+Prometheus
+Grafana
+Splunk
+Logstash
+Kibana
+ElasticSearch
+RabbitMQ
+Kafka
+Redis
+MongoDB
+PostgreSQL
+MariaDB
+MySQL
+CEO
+CFO
+COO
+CTO
+CMO
+CHRO
+CIO
+CISO
+Board of Directors
+BOD
+Founder
+Co-Founder
+Chairman
+Vice Chairman
+Managing Director
+General Director
+Executive Director
+Deputy Director
+Senior Manager
+Project Manager
+Product Manager
+Product Owner
+Scrum Master
+Tech Lead
+Team Lead
+Business Analyst
+BA
+Human Resources
+HR
+HRM
+Talent Acquisition
+Recruitment
+Hiring Manager
+Legal Department
+Finance Department
+Accounting
+Accounts Payable
+Accounts Receivable
+Payroll
+Auditor
+Marketing
+SEO
+SEM
+Social Media
+Digital Marketing
+Branding
+Public Relations
+PR
+Sales
+Business Development
+BD
+Customer Support
+Customer Success
+CRM
+Call Center
+Helpdesk
+IT Department
+IT Support
+Technical Support
+System Administrator
+SysAdmin
+Network Engineer
+Security Engineer
+Penetration Tester
+Pentester
+Software Engineer
+Software Developer
+Backend Developer
+Frontend Developer
+Fullstack Developer
+Mobile Developer
+UX/UI Designer
+Graphic Designer
+QA
+QC
+Quality Assurance
+Quality Control
+Automation Tester
+Manual Tester
+DevOps Engineer
+Cloud Engineer
+Infrastructure Engineer
+Data Engineer
+Data Scientist
+Data Analyst
+BI Analyst
+Supply Chain
+Procurement
+Logistics
+Operations
+Strategy
+Consulting
+Advisory
+Venture Capital
+VC
+Private Equity
+PE
+IPO
+M&A
+Merger
+Acquisition
+Corporate Governance
+Compliance
+Regulation
+Legal Counsel
+General Counsel
+Partnership
+Stakeholder
+Shareholder
+Equity
+Dividend
+Stock Option
+ESOP
+Company Culture
+Corporate Identity
+OKR
+KPI
+ROI
+P&L
+Cash Flow
+Revenue
+Profit
+Gross Profit
+Net Profit
+EBITDA
+Annual Report
+Quarterly Report
+Fiscal Year
+Business Unit
+Subsidiary
+Branch
+Headquarters
+HQ
+Joint Venture
+Franchise
+Outsourcing
+Offshore
+Onshore
+Nearshore
+Vendor
+Supplier
+Distributor
+Reseller
+Wholesaler
+Retailer
+E-commerce
+B2B
+B2C
+C2C
+D2C
+Marketplace
+SaaS
+PaaS
+IaaS
+Enterprise
+Startup
+Unicorn
+Incubator
+Accelerator
+Angel Investor
+Seed Funding
+Series A
+Series B
+Series C
+Exit Strategy
+Go-to-Market
+Product-Market Fit
+Value Proposition
+Competitive Advantage
+Market Segmentation
+Customer Persona
+Brand Positioning
+Marketing Funnel
+Customer Journey
+Lead Generation
+Lead Nurturing
+Conversion Rate
+Churn Rate
+Retention Rate
+Customer Lifetime Value
+CLV
+Net Promoter Score
+NPS
+Business Intelligence
+BI
+OKR
+KPI
+Dashboard
+Analytics
+Growth Hacking
+Performance Marketing
+Account-Based Marketing
+Content Marketing
+Inbound Marketing
+Outbound Marketing
+Sales Funnel
+Cold Calling
+Warm Lead
+Hot Lead
+Negotiation
+Closing Deal
+Contract Management
+Legal Agreement
+Service Level Agreement
+SLA
+Memorandum of Understanding
+MOU
+Non-Disclosure Agreement
+NDA
+Letter of Intent
+LOI
+Due Diligence
+Risk Management
+Crisis Management
+Disaster Recovery
+Contingency Plan
+Business Continuity
+Business Ethics
+Corporate Social Responsibility
+CSR
+ESG
+Sustainability
+Diversity and Inclusion
+Workplace Culture
+Hybrid Work
+Remote Work
+Freelancer
+Contractor
+Consultant
+Gig Economy
+Performance Review
+360 Feedback
+Training & Development
+Learning & Development
+Succession Planning
+Employee Engagement
+Employer Branding
+Workforce Planning
+Payroll Management
+Compensation & Benefits
+Total Rewards
+Job Description
+Job Posting
+Applicant Tracking System
+ATS
+Onboarding
+Offboarding
+Exit Interview
+Employee Satisfaction
+Employee Retention
+Employee Turnover
+Attrition Rate
+Work-Life Balance
+Flexible Work
+Wellness Program
+HR Analytics
+People Analytics
+AI in HR
+Future of Work
+Digital Transformation
