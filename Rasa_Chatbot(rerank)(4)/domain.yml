@@ -1,0 +1,21 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_question
+
+responses:
+  utter_greet:
+  - text: "Hello, I am an assistant of MOR. How can I help you?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - action_ask_deepseek
