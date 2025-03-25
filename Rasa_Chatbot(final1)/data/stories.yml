@@ -1,0 +1,14 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+- story: User asks a question
+  steps:
+    - intent: ask_question
+    - action: action_ask_deepseek
